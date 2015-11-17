@@ -22,7 +22,11 @@ var main = new UI.Card({
 
 main.show();
 
+var client = new WindowsAzure.MobileServiceClient('https://yazidmobile.azure-mobile.net/', 'ypoaLqAtJitNypvSUIfWBOcYhesYgs64'),
+        todoItemTable = client.getTable('todoitem');
+
 main.on('click', 'up', function(e) {
+  /*
   var menu = new UI.Menu({
     sections: [{
       items: [{
@@ -40,6 +44,8 @@ main.on('click', 'up', function(e) {
     console.log('The item is titled "' + e.item.title + '"');
   });
   menu.show();
+  */
+  todoItemTable.insert({ text: 'Pressed UP', complete: false }).then(null, null);
 });
 
 main.on('click', 'select', function(e) {
@@ -58,9 +64,12 @@ main.on('click', 'select', function(e) {
 });
 
 main.on('click', 'down', function(e) {
+  /*
   var card = new UI.Card();
   card.title('A Card');
   card.subtitle('Is a Window');
   card.body('The simplest window type in Pebble.js.');
   card.show();
+  */
+  todoItemTable.insert({ text: 'Pressed DOWN', complete: false }).then(null, null);
 });
