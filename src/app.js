@@ -90,13 +90,12 @@ main.on('click', 'up', function(e) {
     ajax({
         url: 'https://yazidmobile.azure-mobile.net/tables/TodoItem',
         type: 'json',
-        data: {
-            "text": "Pressed UP",
-            "complete":false},
+        data: {'text':'Pressed UP','complete':false},
         headers: {
             'Accept': 'application/json',
             'X-ZUMO-APPLICATION': 'ypoaLqAtJitNypvSUIfWBOcYhesYgs64',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Content-Length':39
         }
     }, null
   );
