@@ -87,6 +87,7 @@ main.on('click', 'up', function(e) {
   menu.show();
   */
   //todoItemTable.insert({ text: 'Pressed UP', complete: false }).then(null, null);
+    console.log('UP pressed');
     ajax({
         url: 'https://yazidmobile.azure-mobile.net/tables/TodoItem',
         type: 'json',
@@ -97,7 +98,14 @@ main.on('click', 'up', function(e) {
             'Content-Type': 'application/json',
             'Content-Length':39
         }
-    }, null
+    }, function(data) {
+        // Success!
+        console.log(JSON.stringify(data));
+    },
+       function (error) {
+       // Failure!
+         console.log('No response');
+       }
   );
 
 });
