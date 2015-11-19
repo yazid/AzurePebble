@@ -98,9 +98,9 @@ main.on('click', 'up', function(e) {
             'Content-Type': 'application/json',
             'Content-Length': 39
         }
-    }, function(data) {
+    }, function(data, status, request) {
          // Success!
-         console.log(JSON.stringify(data));
+         console.log('The ajax request successed: ' + data);
     }, function (error, status, request) {
          // Error.
          console.log('The ajax request failed: ' + error);
