@@ -96,16 +96,16 @@ main.on('click', 'up', function(e) {
             'Accept': 'application/json',
             'X-ZUMO-APPLICATION': 'ypoaLqAtJitNypvSUIfWBOcYhesYgs64',
             'Content-Type': 'application/json',
-            'Content-Length':39
+            'Content-Length': 39
         }
     }, function(data) {
-        // Success!
-        console.log(JSON.stringify(data));
-    },
-       function (error) {
-       // Failure!
-         console.log('No response');
+         // Success!
+         console.log(JSON.stringify(data));
+    }, function (error, status, request) {
+         // Error.
+         console.log('The ajax request failed: ' + error);
        }
+
   );
 
 });
