@@ -100,10 +100,10 @@ main.on('click', 'up', function(e) {
         }
     }, function(data, status, request) {
          // Success!
-         console.log('The ajax request successed: ' + data);
+        console.log('The ajax request successed: ' + JSON.stringify(data));
     }, function (error, status, request) {
          // Error.
-         console.log('The ajax request failed: ' + error);
+        console.log('The ajax request failed: ' + JSON.stringify(error));
        }
 
   );
